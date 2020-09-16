@@ -1,0 +1,15 @@
+C:\Users\Usuario\source\repos\AnalizadorProyecto1\AnalizadorProyecto1\bin\Debug\AnalizadorProyecto1.exe.config
+C:\Users\Usuario\source\repos\AnalizadorProyecto1\AnalizadorProyecto1\bin\Debug\AnalizadorProyecto1.exe
+C:\Users\Usuario\source\repos\AnalizadorProyecto1\AnalizadorProyecto1\bin\Debug\AnalizadorProyecto1.pdb
+C:\Users\Usuario\source\repos\AnalizadorProyecto1\AnalizadorProyecto1\obj\Debug\AnalizadorProyecto1.csprojAssemblyReference.cache
+C:\Users\Usuario\source\repos\AnalizadorProyecto1\AnalizadorProyecto1\obj\Debug\MainWindow.g.cs
+C:\Users\Usuario\source\repos\AnalizadorProyecto1\AnalizadorProyecto1\obj\Debug\App.g.cs
+C:\Users\Usuario\source\repos\AnalizadorProyecto1\AnalizadorProyecto1\obj\Debug\AnalizadorProyecto1_MarkupCompile.cache
+C:\Users\Usuario\source\repos\AnalizadorProyecto1\AnalizadorProyecto1\obj\Debug\AnalizadorProyecto1_MarkupCompile.lref
+C:\Users\Usuario\source\repos\AnalizadorProyecto1\AnalizadorProyecto1\obj\Debug\MainWindow.baml
+C:\Users\Usuario\source\repos\AnalizadorProyecto1\AnalizadorProyecto1\obj\Debug\AnalizadorProyecto1.g.resources
+C:\Users\Usuario\source\repos\AnalizadorProyecto1\AnalizadorProyecto1\obj\Debug\AnalizadorProyecto1.Properties.Resources.resources
+C:\Users\Usuario\source\repos\AnalizadorProyecto1\AnalizadorProyecto1\obj\Debug\AnalizadorProyecto1.csproj.GenerateResource.cache
+C:\Users\Usuario\source\repos\AnalizadorProyecto1\AnalizadorProyecto1\obj\Debug\AnalizadorProyecto1.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\AnalizadorProyecto1\AnalizadorProyecto1\obj\Debug\AnalizadorProyecto1.exe
+C:\Users\Usuario\source\repos\AnalizadorProyecto1\AnalizadorProyecto1\obj\Debug\AnalizadorProyecto1.pdb
