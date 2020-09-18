@@ -41,7 +41,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Location = new System.Drawing.Point(213, 206);
+            this.label1.Location = new System.Drawing.Point(132, 193);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(382, 24);
             this.label1.TabIndex = 0;
@@ -65,7 +65,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label3.Location = new System.Drawing.Point(562, 405);
+            this.label3.Location = new System.Drawing.Point(441, 310);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(226, 16);
             this.label3.TabIndex = 2;
@@ -75,33 +75,34 @@
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Image = global::Proyecto1Consola.Properties.Resources.Gato1;
-            this.label4.Location = new System.Drawing.Point(352, 64);
+            this.label4.Location = new System.Drawing.Point(260, 50);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 129);
             this.label4.TabIndex = 3;
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(229, 244);
+            this.progressBar1.Location = new System.Drawing.Point(148, 229);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(354, 23);
             this.progressBar1.Step = 100;
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar1.TabIndex = 4;
+            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto1Consola.Properties.Resources.Fondo1;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(675, 367);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Lenguajes Copilador";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

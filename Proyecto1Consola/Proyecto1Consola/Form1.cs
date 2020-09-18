@@ -43,5 +43,10 @@ namespace Proyecto1Consola
             desk.Show();
             this.Hide();
         }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
