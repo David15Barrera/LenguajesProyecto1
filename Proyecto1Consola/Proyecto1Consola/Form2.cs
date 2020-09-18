@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto1Consola.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,13 +22,14 @@ namespace Proyecto1Consola
             InitializeComponent();
         }
         #region variables
-
         private bool Poblamiento = true;
         private LectorSintaxis LectorSintactico;
         private Color kCommentarioColor = Color.LightGreen;
         private List<string> Tokens = new List<string>();
 
         private List<string> CodigoEscrito = new List<string>();
+
+        #endregion
 
         #region Estructurasintaxis
         struct WordAndPosition
@@ -253,17 +255,17 @@ namespace Proyecto1Consola
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            LectorSintactico = new LectorSintaxis("chumpe.syntax");
+            LectorSintactico = new LectorSintaxis("Palabras.syntax");
             CodigoInicio();
             this.CrearSintaxisColorAllText(richTextBox1.Text);
             Assembly assembly = Assembly.GetExecutingAssembly();
             FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
             string version = fvi.FileVersion;
-            this.Text = "CHUMPE++ V" + version;
+            this.Text = "Lenguajes Formlaes IDE" + version;
             this.richTextBox1.AcceptsTab = true;
-            tabControl1.Visible = false;
-            richTextBox1.Select();
-            richTextBox1.DetectUrls = true;
+           // tabControl1.Visible = false;
+          //  richTextBox1.Select();
+          //  richTextBox1.DetectUrls = true;
         }
 
         private void richTextBox1_TextChanged_1(object sender, EventArgs e)
@@ -275,16 +277,25 @@ namespace Proyecto1Consola
             CrearSintaxisPorCadaLinea();
             ColorSyntaxEditor.FlickerFreeRichEditTextBox._Paint = true;
         }
-        
 
+        private void richTextBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Tab:
+                    var d = richTextBox1.SelectionTabs;
+                    break;
+            }
+        }
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tabControl1.Visible = true;
+            richTextBox1.Text = "";
+            if (Archivos.Direccion != null) Archivos.Direccion = null;
         }
 
         private void cerrarProyectoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tabControl1.Visible = false;
+           // tabControl1.Visible = false;
         }
 
         private void crearToolStripMenuItem_Click(object sender, EventArgs e)
@@ -311,7 +322,7 @@ namespace Proyecto1Consola
               ///          nomarchivox = ofd.FileName;
 
                //         txt_direccion.Text = ofd.FileName;
-                        tabControl1.Visible = true;
+                       // tabControl1.Visible = true;
                     }
 
                 }
@@ -355,5 +366,6 @@ namespace Proyecto1Consola
         {
 
         }
+        #endregion
     }
 }

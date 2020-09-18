@@ -51,6 +51,9 @@
     <Compile Include="Clases\Archivos.cs" />
     <Compile Include="Clases\Compilador.cs" />
     <Compile Include="Clases\LectorSintactico.cs" />
+    <Compile Include="FlickerFreeRichEditTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
