@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\AnalizadorLexico.cs" />
+    <Compile Include="Clases\AnalizadorSemantico.cs" />
+    <Compile Include="Clases\Archivos.cs" />
+    <Compile Include="Clases\Compilador.cs" />
+    <Compile Include="Clases\LectorSintactico.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,8 +100,6 @@
   <ItemGroup>
     <None Include="Resources\Gato1.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Clases\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
