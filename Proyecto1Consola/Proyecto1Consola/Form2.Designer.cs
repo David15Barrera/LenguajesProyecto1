@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,9 +41,14 @@
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolProgreso = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolErrorSintaxis = new System.Windows.Forms.ToolStripStatusLabel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -73,34 +79,37 @@
             // crearToolStripMenuItem
             // 
             this.crearToolStripMenuItem.Name = "crearToolStripMenuItem";
-            this.crearToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.crearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.crearToolStripMenuItem.Text = "Crear";
             this.crearToolStripMenuItem.Click += new System.EventHandler(this.crearToolStripMenuItem_Click);
             // 
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
             // guardarComoToolStripMenuItem
             // 
             this.guardarComoToolStripMenuItem.Name = "guardarComoToolStripMenuItem";
-            this.guardarComoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.guardarComoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.guardarComoToolStripMenuItem.Text = "Guardar Como";
+            this.guardarComoToolStripMenuItem.Click += new System.EventHandler(this.guardarComoToolStripMenuItem_Click);
             // 
             // guardarToolStripMenuItem
             // 
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.guardarToolStripMenuItem.Text = "Guardar";
+            this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // editarToolStripMenuItem
             // 
@@ -113,7 +122,7 @@
             // cerrarProyectoToolStripMenuItem
             // 
             this.cerrarProyectoToolStripMenuItem.Name = "cerrarProyectoToolStripMenuItem";
-            this.cerrarProyectoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.cerrarProyectoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cerrarProyectoToolStripMenuItem.Text = "Cerrar Proyecto";
             this.cerrarProyectoToolStripMenuItem.Click += new System.EventHandler(this.cerrarProyectoToolStripMenuItem_Click);
             // 
@@ -128,8 +137,9 @@
             // informacionToolStripMenuItem
             // 
             this.informacionToolStripMenuItem.Name = "informacionToolStripMenuItem";
-            this.informacionToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.informacionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.informacionToolStripMenuItem.Text = "Informacion";
+            this.informacionToolStripMenuItem.Click += new System.EventHandler(this.informacionToolStripMenuItem_Click);
             // 
             // button1
             // 
@@ -137,16 +147,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Copilar";
+            this.button1.Text = "Inicio";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Location = new System.Drawing.Point(13, 351);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(738, 96);
-            this.richTextBox2.TabIndex = 3;
-            this.richTextBox2.Text = "";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // richTextBox1
             // 
@@ -157,22 +160,75 @@
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolProgreso,
+            this.toolErrorSintaxis});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 353);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip1.TabIndex = 4;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolProgreso
+            // 
+            this.toolProgreso.Name = "toolProgreso";
+            this.toolProgreso.Size = new System.Drawing.Size(100, 16);
+            this.toolProgreso.Step = 100;
+            this.toolProgreso.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            // 
+            // toolErrorSintaxis
+            // 
+            this.toolErrorSintaxis.Name = "toolErrorSintaxis";
+            this.toolErrorSintaxis.Size = new System.Drawing.Size(59, 17);
+            this.toolErrorSintaxis.Text = "Copilador";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(109, 308);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 16);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Fila";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(195, 310);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 16);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Columna";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto1Consola.Properties.Resources.Fondo1;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 375);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form2";
-            this.Text = " ";
+            this.Text = " Editar de Archivo";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,7 +242,6 @@
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem guardarComoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem guardarToolStripMenuItem;
@@ -194,5 +249,10 @@
         private System.Windows.Forms.ToolStripMenuItem cerrarProyectoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informacionToolStripMenuItem;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripProgressBar toolProgreso;
+        private System.Windows.Forms.ToolStripStatusLabel toolErrorSintaxis;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

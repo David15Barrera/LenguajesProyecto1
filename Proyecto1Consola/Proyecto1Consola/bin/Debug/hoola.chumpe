@@ -1,0 +1,12 @@
+espacio ChumpeDesktop
+{
+     usar sistema;
+     usar sistema.coleccion;
+     usar sistema.componentes;
+     publico clase chumpe
+     {
+       chumpe_inicio()
+       {
+       }
+     }
+}

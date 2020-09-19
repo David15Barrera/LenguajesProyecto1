@@ -51,6 +51,12 @@
     <Compile Include="Clases\Archivos.cs" />
     <Compile Include="Clases\Compilador.cs" />
     <Compile Include="Clases\LectorSintactico.cs" />
+    <Compile Include="ErroresDeTokens.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErroresDeTokens.Designer.cs">
+      <DependentUpon>ErroresDeTokens.cs</DependentUpon>
+    </Compile>
     <Compile Include="FlickerFreeRichEditTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -66,8 +72,17 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ErroresDeTokens.resx">
+      <DependentUpon>ErroresDeTokens.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

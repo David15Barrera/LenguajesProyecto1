@@ -239,12 +239,12 @@ namespace Proyecto1Consola.Clases
             }
             if (espacio >= 2)
             {
-                this.ERRORES_.Add("Error: No se puede nombrar dos espacios en el mismo contexto { un chumpe } ");
+                this.ERRORES_.Add("Error: No se puede nombrar dos espacios en el mismo contexto ");
                 return true;
             }
             else if (espacio == 0)
             {
-                this.ERRORES_.Add("Error: El Espacio de trabajo no ha sido nombrado { espacio chumpe } ");
+                this.ERRORES_.Add("Error: El Espacio de trabajo no ha sido nombrado ");
                 return true;
             }
             else return false;
@@ -290,7 +290,7 @@ namespace Proyecto1Consola.Clases
                             }
                             if (analisis_sentencia_correcta == 0)
                             {
-                                this.ERRORES_.Add("Error: cerca de la linea " + C + ", Revisa tu chumpe");
+                                this.ERRORES_.Add("Error: cerca de la linea " + C + ", Revisa tu codigo");
                                 return true;
                             }
                             else if (analisis_sentencia_correcta >= 2)
@@ -428,7 +428,7 @@ namespace Proyecto1Consola.Clases
                         catch
                         {
                             this.ERRORES_.Add("Existe un error:  ya se ha declarado una variable con el nombre de "
-                                + trozo[0] + " y de tipo " + tokens + " , Cambia el nombre  para que compile tu chumpe");
+                                + trozo[0] + " y de tipo " + tokens + " , Cambia el nombre  para compilar");
                         }
                     }
                 }
