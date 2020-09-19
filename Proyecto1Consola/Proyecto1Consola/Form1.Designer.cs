@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,7 +54,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(12, 29);
+            this.label2.Location = new System.Drawing.Point(21, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(142, 73);
             this.label2.TabIndex = 1;
@@ -65,7 +66,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label3.Location = new System.Drawing.Point(441, 310);
+            this.label3.Location = new System.Drawing.Point(369, 291);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(226, 16);
             this.label3.TabIndex = 2;
@@ -75,7 +76,7 @@
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Image = global::Proyecto1Consola.Properties.Resources.Gato1;
-            this.label4.Location = new System.Drawing.Point(260, 50);
+            this.label4.Location = new System.Drawing.Point(270, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 129);
             this.label4.TabIndex = 3;
@@ -95,13 +96,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto1Consola.Properties.Resources.Fondo1;
-            this.ClientSize = new System.Drawing.Size(675, 367);
+            this.ClientSize = new System.Drawing.Size(623, 328);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lenguajes Copilador";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
