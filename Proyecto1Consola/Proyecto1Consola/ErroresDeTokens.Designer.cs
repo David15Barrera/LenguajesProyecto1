@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ErroresDeTokens));
             this.grilla_error = new System.Windows.Forms.DataGridView();
             this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.err = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,16 +59,18 @@
             this.err.Name = "err";
             this.err.Width = 600;
             // 
-            // FormMostrarErrores
+            // ErroresDeTokens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Proyecto1Consola.Properties.Resources.Fondo1;
             this.ClientSize = new System.Drawing.Size(725, 174);
             this.Controls.Add(this.grilla_error);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "FormMostrarErrores";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "ErroresDeTokens";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormMostrarErrores";
+            this.Text = "Muestra de Errores";
             this.Load += new System.EventHandler(this.FormMostrarErrores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grilla_error)).EndInit();
             this.ResumeLayout(false);
