@@ -32,6 +32,7 @@
             this.grilla_error = new System.Windows.Forms.DataGridView();
             this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.err = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grilla_error)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,7 +42,7 @@
             this.grilla_error.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numero,
             this.err});
-            this.grilla_error.Location = new System.Drawing.Point(0, 0);
+            this.grilla_error.Location = new System.Drawing.Point(0, 22);
             this.grilla_error.Name = "grilla_error";
             this.grilla_error.Size = new System.Drawing.Size(713, 115);
             this.grilla_error.TabIndex = 0;
@@ -49,7 +50,7 @@
             // 
             // numero
             // 
-            this.numero.HeaderText = "";
+            this.numero.HeaderText = "Fila";
             this.numero.Name = "numero";
             // 
             // err
@@ -59,12 +60,23 @@
             this.err.Name = "err";
             this.err.Width = 600;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(31, 180);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Guardar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ErroresDeTokens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto1Consola.Properties.Resources.Fondo1;
-            this.ClientSize = new System.Drawing.Size(725, 174);
+            this.ClientSize = new System.Drawing.Size(725, 215);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.grilla_error);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -81,5 +93,6 @@
         private System.Windows.Forms.DataGridView grilla_error;
         private System.Windows.Forms.DataGridViewTextBoxColumn numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn err;
+        private System.Windows.Forms.Button button1;
     }
 }

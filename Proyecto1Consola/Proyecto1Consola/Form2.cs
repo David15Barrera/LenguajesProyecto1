@@ -335,7 +335,7 @@ namespace Proyecto1Consola
                     ProcessStartInfo psi = new ProcessStartInfo(System.IO.Directory.GetCurrentDirectory() + @"\" + nombre + ".exe");
                     p.StartInfo = psi;
                     p.Start();
-                    toolErrorSintaxis.Text = "EL trabajo se a copilado... ";
+                    toolErrorSintaxis.Text = "EL trabajo se a copilado ";
                 //    toolnotificaciones.Text = "sin notificaciones...";
                 }
                 else
@@ -348,7 +348,7 @@ namespace Proyecto1Consola
 
 
                     }
-                    toolErrorSintaxis.Text = "Compilacion exitosa pero con error en IL";
+                    toolErrorSintaxis.Text = "Compilacion exitosa pero contiene un error de compilacion";
                 }
                 toolProgreso.Increment(100);
 
@@ -414,7 +414,7 @@ namespace Proyecto1Consola
 
                 MessageBox.Show("El archivo no se abrio correctamente");
 
-             //   tabla_errorres.addliste(2);
+               // tabla_errorres.addliste(2);
             }
 
         }
@@ -444,10 +444,6 @@ namespace Proyecto1Consola
 
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         #endregion
 
         private void button1_Click(object sender, EventArgs e)
@@ -490,6 +486,11 @@ namespace Proyecto1Consola
             GetCodigoEscrito();
             Archivos.Guardar(CodigoEscrito);
             Application.Exit();
+        }
+
+        private void richTextBox1_TextChanged_2(object sender, EventArgs e)
+        {
+
         }
     }
 }

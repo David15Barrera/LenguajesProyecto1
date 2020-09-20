@@ -56,7 +56,7 @@ namespace Proyecto1Consola.Clases
             {
                 OpenFileDialog openD = new OpenFileDialog();
                 openD.ShowDialog();
-                openD.Filter = "(.chumpe)|*.chumpe";
+                openD.Filter = "(.gtE)|*.gtE";
                 if (openD.CheckFileExists)
                 {
                     Direccion = openD.FileName;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,6 +38,25 @@ namespace Proyecto1Consola
         private void grilla_error_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+        private void ArchivoError()
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            TextWriter sw = new StreamWriter(@"Errores.gtE");
+            int rowcount = grilla_error.Rows.Count;
+            for (int i = 0; i < rowcount - 1; i++)
+            {
+                sw.WriteLine(grilla_error.Rows[i].Cells[0].Value.ToString() + "\t"
+                             + grilla_error.Rows[i].Cells[1].Value.ToString() + "\t"
+);
+            }
+            sw.Close();
+            MessageBox.Show("Datos Exportados correctamente");
         }
     }
 }
