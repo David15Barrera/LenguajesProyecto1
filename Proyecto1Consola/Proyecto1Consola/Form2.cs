@@ -259,19 +259,12 @@ namespace Proyecto1Consola
             string version = fvi.FileVersion;
             this.Text = "Lenguajes Formlaes IDE" + version;
             this.richTextBox1.AcceptsTab = true;
-           // tabControl1.Visible = false;
-          //  richTextBox1.Select();
-          //  richTextBox1.DetectUrls = true;
-        }
+            // tabControl1.Visible = false;
+            //  richTextBox1.Select();
+            //  richTextBox1.DetectUrls = true;
+            
 
-        private void richTextBox1_TextChanged_1(object sender, EventArgs e)
-        {
-            if (Poblamiento)
-                return;
 
-            ColorSyntaxEditor.FlickerFreeRichEditTextBox._Paint = false;
-            CrearSintaxisPorCadaLinea();
-            ColorSyntaxEditor.FlickerFreeRichEditTextBox._Paint = true;
         }
 
         private void richTextBox1_KeyUp(object sender, KeyEventArgs e)
@@ -302,9 +295,17 @@ namespace Proyecto1Consola
                 if (Errores.Count != 0)
                 {
                     toolErrorSintaxis.Text = "Error al compilar... ";
-                    ErroresDeTokens.ListaErrores = Errores;
-                    ErroresDeTokens FrmError = new ErroresDeTokens();
-                    FrmError.Show();
+                     for (int i = 0; i < Errores.Count; i++)
+                        {
+                            dataGridView1.Rows.Add();
+                            dataGridView1[0, i].Value = (i + 1);
+                            dataGridView1[1, i].Value = Errores[i].ToString();
+                        }
+                    
+                 //   ErroresDeTokens.ListaErrores = Errores;
+                //    ErroresDeTokens FrmError = new ErroresDeTokens();
+               //     FrmError.Show();
+
                 //    toolnotificaciones.Text = "sin notificaciones...";
                     toolProgreso.Increment(100);
                     return;
@@ -342,11 +343,16 @@ namespace Proyecto1Consola
                 {
                     if (ILerr.Count >= 1)
                     {
-                        ErroresDeTokens.ListaErrores = ILerr;
-                        ErroresDeTokens FrmError = new ErroresDeTokens();
-                        FrmError.Show();
+                   //       ErroresDeTokens.ListaErrores = ILerr;
+                  //         ErroresDeTokens FrmError = new ErroresDeTokens();
+                 //           FrmError.Show();
+                        for (int i = 0; i < ILerr.Count; i++)
+                        {
+                            dataGridView1.Rows.Add();
+                            dataGridView1[0, i].Value = (i + 1);
+                            dataGridView1[1, i].Value = ILerr[i].ToString();
 
-
+                        }
                     }
                     toolErrorSintaxis.Text = "Compilacion exitosa pero contiene un error de compilacion";
                 }
@@ -457,7 +463,7 @@ namespace Proyecto1Consola
                 {
                     ANALIZADOR_SEMANTICO_SINTACTICO__ analizador = new ANALIZADOR_SEMANTICO_SINTACTICO__(ANALIZAR_COMPILAR);
                     this.Invoke(analizador);
-                });
+                 });
             hilo.Start();
 
         }
@@ -498,6 +504,35 @@ namespace Proyecto1Consola
             ColorSyntaxEditor.FlickerFreeRichEditTextBox._Paint = false;
             CrearSintaxisPorCadaLinea();
             ColorSyntaxEditor.FlickerFreeRichEditTextBox._Paint = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save_ = new SaveFileDialog();
+            save_.Filter = "(.gtE)|*.gtE";
+            save_.Title = "Guardar";
+            if (save_.ShowDialog() == DialogResult.OK)
+            {
+
+                TextWriter sw = new StreamWriter("Errores.gtE");
+                int rowcount = dataGridView1.Rows.Count;
+                for (int i = 0; i < rowcount - 1; i++)
+                {
+                    sw.WriteLine(dataGridView1.Rows[i].Cells[0].Value.ToString() + "\t"
+                                 + dataGridView1.Rows[i].Cells[1].Value.ToString() + "\t"
+    );
+                }
+                sw.Close();
+                MessageBox.Show("Datos Exportados correctamente");
+
+            }
+            save_.Dispose();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
         }
     }
 }
