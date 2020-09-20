@@ -488,9 +488,16 @@ namespace Proyecto1Consola
             Application.Exit();
         }
 
+
+//Correcion del error verificar siembre el tipo de testChanged utilizado
         private void richTextBox1_TextChanged_2(object sender, EventArgs e)
         {
+            if (Poblamiento)
+                return;
 
+            ColorSyntaxEditor.FlickerFreeRichEditTextBox._Paint = false;
+            CrearSintaxisPorCadaLinea();
+            ColorSyntaxEditor.FlickerFreeRichEditTextBox._Paint = true;
         }
     }
 }

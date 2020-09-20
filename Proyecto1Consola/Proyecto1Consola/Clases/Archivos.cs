@@ -19,7 +19,7 @@ namespace Proyecto1Consola.Clases
             if (Direccion == null || redir == true)
             {
                 SaveFileDialog save_ = new SaveFileDialog();
-                save_.Filter = "(.gteD)|*.gteD";
+                save_.Filter = "(.gtE)|*.gtE";
 
 
                 if (save_.ShowDialog() == DialogResult.OK)

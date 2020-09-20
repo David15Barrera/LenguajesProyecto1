@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto1Consola.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,6 +34,7 @@ namespace Proyecto1Consola
                     grilla_error[1, i].Value = ListaErrores[i].ToString();
                 }
             }
+
         }
 
         private void grilla_error_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -43,20 +45,30 @@ namespace Proyecto1Consola
         {
 
         }
+        public static List<string> Lista = new List<string>();
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            TextWriter sw = new StreamWriter(@"Errores.gtE");
-            int rowcount = grilla_error.Rows.Count;
-            for (int i = 0; i < rowcount - 1; i++)
+            SaveFileDialog save_ = new SaveFileDialog();
+            save_.Filter = "(.gtE)|*.gtE";
+            save_.Title = "Guardar";
+            if (save_.ShowDialog() == DialogResult.OK)
             {
-                sw.WriteLine(grilla_error.Rows[i].Cells[0].Value.ToString() + "\t"
-                             + grilla_error.Rows[i].Cells[1].Value.ToString() + "\t"
-);
+
+               TextWriter sw = new StreamWriter("cosa.gtE");
+                int rowcount = grilla_error.Rows.Count;
+                for (int i = 0; i < rowcount - 1; i++)
+                {
+                    sw.WriteLine(grilla_error.Rows[i].Cells[0].Value.ToString() + "\t"
+                                 + grilla_error.Rows[i].Cells[1].Value.ToString() + "\t"
+    );
+                }
+                sw.Close();
+                MessageBox.Show("Datos Exportados correctamente");
+
             }
-            sw.Close();
-            MessageBox.Show("Datos Exportados correctamente");
+            save_.Dispose();
+           // Archivos.Guardar(CodigoEscrito, true);
         }
     }
 }
