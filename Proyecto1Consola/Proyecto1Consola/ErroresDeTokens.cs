@@ -55,7 +55,7 @@ namespace Proyecto1Consola
             if (save_.ShowDialog() == DialogResult.OK)
             {
 
-               TextWriter sw = new StreamWriter("cosa.gtE");
+               TextWriter sw = new StreamWriter("Errores.gtE");
                 int rowcount = grilla_error.Rows.Count;
                 for (int i = 0; i < rowcount - 1; i++)
                 {
