@@ -206,12 +206,12 @@ namespace Proyecto1Consola.Clases
                 }
                 if (separador_llave_derecha != separador_llave_izquierda)
                 {
-                    this.ERRORES_.Add("Error: Ha perdido una o mas llave(s) dentro del archivo {...}");
+                    this.ERRORES_.Add("Error: Ha perdido una o mas llave(s) dentro del archivo");
                     error = true;
                 }
                 if (separador_parentesis_izquierda != separador_parentesis_derecha)
                 {
-                    this.ERRORES_.Add("Error: Ha perdido uno o mas parentesis dentro del archivo (...)");
+                    this.ERRORES_.Add("Error: Ha perdido uno o mas parentesis dentro del archivo");
                     error = true;
                 }
             }
@@ -380,7 +380,7 @@ namespace Proyecto1Consola.Clases
                         this.ERRORES_.Add("Error en la condicion si se esperaba una expresion aceptada cerca de  [" + err_expresion + "]");
                         break;
                     case (int)ERR_SECUENCIA.EXPRESION_NOIDENTIFICADA:
-                        this.ERRORES_.Add("Error cerca de la expresion  [" + err_expresion + "] no se ha identificado (¿ha perdido algun chumpe?)");
+                        this.ERRORES_.Add("Error cerca de la expresion  [" + err_expresion + "] no se ha identificado ");
                         break;
                 }
                 if (valor_err != 1) return true;

@@ -51,12 +51,6 @@
     <Compile Include="Clases\Archivos.cs" />
     <Compile Include="Clases\Compilador.cs" />
     <Compile Include="Clases\LectorSintactico.cs" />
-    <Compile Include="ErroresDeTokens.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ErroresDeTokens.Designer.cs">
-      <DependentUpon>ErroresDeTokens.cs</DependentUpon>
-    </Compile>
     <Compile Include="FlickerFreeRichEditTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -74,9 +68,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ErroresDeTokens.resx">
-      <DependentUpon>ErroresDeTokens.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +103,26 @@
   <ItemGroup>
     <None Include="Resources\Gato1.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\document_file_text_icon_153737.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_archive_icon_153707.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power_on_off_icon_153694.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\signal_warning_alert_caution_icon_153703.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_find_locate_magnifyng_glass_icon_153700.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_top_left_icon_153718.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text_edit_icon_153727.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

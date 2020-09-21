@@ -251,6 +251,7 @@ namespace Proyecto1Consola
 
         private void Form2_Load(object sender, EventArgs e)
         {
+
             LectorSintactico = new LectorSintaxis("Palabras.syntax");
             CodigoInicio();
             this.CrearSintaxisColorAllText(richTextBox1.Text);
@@ -259,10 +260,12 @@ namespace Proyecto1Consola
             string version = fvi.FileVersion;
             this.Text = "Lenguajes Formlaes IDE" + version;
             this.richTextBox1.AcceptsTab = true;
+            button2.Enabled = false;
+            button3.Enabled = false;
             // tabControl1.Visible = false;
             //  richTextBox1.Select();
             //  richTextBox1.DetectUrls = true;
-            
+
 
 
         }
@@ -295,18 +298,15 @@ namespace Proyecto1Consola
                 if (Errores.Count != 0)
                 {
                     toolErrorSintaxis.Text = "Error al compilar... ";
-                     for (int i = 0; i < Errores.Count; i++)
-                        {
-                            dataGridView1.Rows.Add();
-                            dataGridView1[0, i].Value = (i + 1);
-                            dataGridView1[1, i].Value = Errores[i].ToString();
-                        }
-                    
-                 //   ErroresDeTokens.ListaErrores = Errores;
-                //    ErroresDeTokens FrmError = new ErroresDeTokens();
-               //     FrmError.Show();
+                    for (int i = 0; i < Errores.Count; i++)
+                    {
+                        dataGridView1.Rows.Add();
+                        dataGridView1[0, i].Value = (i + 1);
+                        dataGridView1[1, i].Value = Errores[i].ToString();
+                    }
 
-                //    toolnotificaciones.Text = "sin notificaciones...";
+
+                    //    toolnotificaciones.Text = "sin notificaciones...";
                     toolProgreso.Increment(100);
                     return;
                 }
@@ -322,7 +322,7 @@ namespace Proyecto1Consola
                 string nombre = trozo_direccion[trozo_direccion.Length - 1];
                 if (nombre == "" || string.IsNullOrEmpty(nombre))
                     nombre = "Lenguajes";
-              //  toolnotificaciones.Text = "Compilando... (60%)";
+                //  toolnotificaciones.Text = "Compilando... (60%)";
                 toolProgreso.Increment(60);
 
                 var d = compilador.CheckCodigoAcompilar(CodigoComputado);
@@ -337,15 +337,12 @@ namespace Proyecto1Consola
                     p.StartInfo = psi;
                     p.Start();
                     toolErrorSintaxis.Text = "EL trabajo se a copilado ";
-                //    toolnotificaciones.Text = "sin notificaciones...";
+                    //    toolnotificaciones.Text = "sin notificaciones...";
                 }
                 else
                 {
                     if (ILerr.Count >= 1)
                     {
-                   //       ErroresDeTokens.ListaErrores = ILerr;
-                  //         ErroresDeTokens FrmError = new ErroresDeTokens();
-                 //           FrmError.Show();
                         for (int i = 0; i < ILerr.Count; i++)
                         {
                             dataGridView1.Rows.Add();
@@ -374,7 +371,8 @@ namespace Proyecto1Consola
 
         private void cerrarProyectoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           // tabControl1.Visible = false;
+            richTextBox1.Text = "";
+            if (Archivos.Direccion != null) Archivos.Direccion = null;
         }
 
         private void crearToolStripMenuItem_Click(object sender, EventArgs e)
@@ -391,60 +389,6 @@ namespace Proyecto1Consola
             catch { }
         }
 
-        public void abrirarchivo()
-        {
-
-            try
-            {
-                OpenFileDialog ofd = new OpenFileDialog();
-
-                ofd.Title = "Lenguajes                                                                     Abrir Archivo                                                                       ";
-                ofd.ShowDialog();
-                // ofd.Filter = "Archivos ed#(*.ed)|*.ed";
-                if (File.Exists(ofd.FileName))
-                {
-                    using (Stream stream = ofd.OpenFile())
-                    {
-                        //MessageBox.Show("archivo encontrado:  "+ofd.FileName);
-                        leerarchivo(ofd.FileName);
-              ///          nomarchivox = ofd.FileName;
-
-               //         txt_direccion.Text = ofd.FileName;
-                       // tabControl1.Visible = true;
-                    }
-
-                }
-            }
-            catch (Exception)
-            {
-
-                MessageBox.Show("El archivo no se abrio correctamente");
-
-               // tabla_errorres.addliste(2);
-            }
-
-        }
-
-        public void leerarchivo(string nomarchivo)
-        {
-            StreamReader reader = new StreamReader(nomarchivo, System.Text.Encoding.Default);
-            //string read = reader.ReadLine();
-            string texto;
-            // while (read != null)
-            //{
-            texto = reader.ReadToEnd();
-            // read = read + "\n";
-
-            reader.Close();
-
-            richTextBox1.Text = texto;
-            // read =reader.ReadLine();
-
-            //}
-
-
-        }
-
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
@@ -454,7 +398,8 @@ namespace Proyecto1Consola
 
         private void button1_Click(object sender, EventArgs e)
         {
-           // toolnotificaciones.Text = "Compilando espere..";
+
+            // toolnotificaciones.Text = "Compilando espere..";
             toolProgreso.Style = ProgressBarStyle.Continuous;
             toolProgreso.Overflow = ToolStripItemOverflow.Always;
             toolProgreso.Increment(10);
@@ -463,12 +408,13 @@ namespace Proyecto1Consola
                 {
                     ANALIZADOR_SEMANTICO_SINTACTICO__ analizador = new ANALIZADOR_SEMANTICO_SINTACTICO__(ANALIZAR_COMPILAR);
                     this.Invoke(analizador);
-                 });
+                });
             hilo.Start();
-
+            button2.Enabled = true;
+            button3.Enabled = true;
         }
 
-//Codigo para la utilizacion de los codigos de la misma
+        //Codigo para la utilizacion de los codigos de la misma
         private void informacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -495,7 +441,7 @@ namespace Proyecto1Consola
         }
 
 
-//Correcion del error verificar siembre el tipo de testChanged utilizado
+        //Correcion del error verificar siembre el tipo de testChanged utilizado
         private void richTextBox1_TextChanged_2(object sender, EventArgs e)
         {
             if (Poblamiento)
@@ -533,6 +479,33 @@ namespace Proyecto1Consola
         private void button3_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
+            button2.Enabled = false;
+            button3.Enabled = false;
         }
+
+        private void richTextbox1(object sender, KeyPressEventArgs e)
+        {
+            int index = richTextBox1.SelectionStart;
+            int line = richTextBox1.GetLineFromCharIndex(index);
+
+            int firstChar = richTextBox1.GetFirstCharIndexFromLine(line);
+            int column = index - firstChar;
+            label3.Text = Convert.ToString((line + 1));
+            label4.Text = Convert.ToString(column);
+            richTextBox1.SelectionColor = Color.White;
+        }
+
+        private void richTextBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            int index = richTextBox1.SelectionStart;
+            int line = richTextBox1.GetLineFromCharIndex(index);
+
+            int firstChar = richTextBox1.GetFirstCharIndexFromLine(line);
+            int column = index - firstChar;
+            label3.Text = Convert.ToString( (line + 1));
+            label4.Text = Convert.ToString( column);
+            richTextBox1.SelectionColor = Color.White;
+        }
+
     }
 }
