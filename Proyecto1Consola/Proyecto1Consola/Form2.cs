@@ -485,14 +485,7 @@ namespace Proyecto1Consola
 
         private void richTextbox1(object sender, KeyPressEventArgs e)
         {
-            int index = richTextBox1.SelectionStart;
-            int line = richTextBox1.GetLineFromCharIndex(index);
-
-            int firstChar = richTextBox1.GetFirstCharIndexFromLine(line);
-            int column = index - firstChar;
-            label3.Text = Convert.ToString((line + 1));
-            label4.Text = Convert.ToString(column);
-            richTextBox1.SelectionColor = Color.White;
+            
         }
 
         private void richTextBox1_MouseClick(object sender, MouseEventArgs e)
@@ -507,5 +500,16 @@ namespace Proyecto1Consola
             richTextBox1.SelectionColor = Color.White;
         }
 
+        private void Abajo(object sender, KeyEventArgs e)
+        {
+            int index = richTextBox1.SelectionStart;
+            int line = richTextBox1.GetLineFromCharIndex(index);
+
+            int firstChar = richTextBox1.GetFirstCharIndexFromLine(line);
+            int column = index - firstChar;
+            label3.Text = Convert.ToString((line + 1));
+            label4.Text = Convert.ToString(column);
+            richTextBox1.SelectionColor = Color.White;
+        }
     }
 }
