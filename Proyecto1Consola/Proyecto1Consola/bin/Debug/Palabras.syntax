@@ -12,6 +12,7 @@ SI
 HACER
 DESDE
 HASTA
+usar
 INCREMENTO
 entonces
 entero
@@ -33,10 +34,14 @@ finmientras
 [FUNCIONES]
 pi
 e
-chumpe
+Inicio
 espacio
 1
 2
+2
+3
+4
+5
 clase
 sistema
 imprimir

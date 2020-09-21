@@ -110,6 +110,7 @@ namespace Proyecto1Consola.Clases
             FUNCIONES_.Add("e");
             FUNCIONES_.Add("chumpe");
             FUNCIONES_.Add("espacio");
+            FUNCIONES_.Add("Inicio");
             FUNCIONES_.Add("sistema");
             FUNCIONES_.Add("imprimir");
             FUNCIONES_.Add("leer");
@@ -231,7 +232,7 @@ namespace Proyecto1Consola.Clases
             int espacio = 0;
             foreach (string c in Codigo)
             {
-                int index = c.IndexOf("espacio");
+                int index = c.IndexOf("Inicio");
                 if (index != -1)
                 {
                     espacio++;
@@ -239,12 +240,12 @@ namespace Proyecto1Consola.Clases
             }
             if (espacio >= 2)
             {
-                this.ERRORES_.Add("Error: No se puede nombrar dos espacios en el mismo contexto ");
+                this.ERRORES_.Add("Error: No se puede nombrar dos inicios en el mismo contexto ");
                 return true;
             }
             else if (espacio == 0)
             {
-                this.ERRORES_.Add("Error: El Espacio de trabajo no ha sido nombrado ");
+                this.ERRORES_.Add("Error: El Inicio de trabajo no ha sido nombrado ");
                 return true;
             }
             else return false;
@@ -285,7 +286,7 @@ namespace Proyecto1Consola.Clases
                                         this.Dimensionales.Enqueue(C);
                                     break;
                                 case "clase":
-                                    //analisis_sentencia_correcta = AnalizadorLexico.ANALIZAR_SINTAXIS_CLASE(C);
+                                   // analisis_sentencia_correcta = AnalizadorLexico.ANALIZAR_SINTAXIS_CLASE(C);
                                     break;
                             }
                             if (analisis_sentencia_correcta == 0)

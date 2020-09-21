@@ -265,10 +265,7 @@ namespace Proyecto1Consola
             // tabControl1.Visible = false;
             //  richTextBox1.Select();
             //  richTextBox1.DetectUrls = true;
-
-
-
-        }
+             }
 
         private void richTextBox1_KeyUp(object sender, KeyEventArgs e)
         {
