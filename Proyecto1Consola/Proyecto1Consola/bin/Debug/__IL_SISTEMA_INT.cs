@@ -8,15 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections;
-using System.ComponentModel;
 
 
-
-public class chumpe {
+public class  {
     
     public static void Main() {
+        System.Console.WriteLine("leer");
+        int a = 0;
         System.Console.ReadLine();
     }
 }

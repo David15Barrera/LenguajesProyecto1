@@ -83,10 +83,10 @@ namespace Proyecto1Consola.Clases
             // declaracion del namespace
             for (i = 0; i < sintactica.Count; i++)
             {
-                patron = "^(espacio)";
+                patron = "^(PRINCIPIO)";
                 if (Regex.IsMatch(sintactica[i], patron))
                 {
-                    string[] name = sintactica[i].Replace(";", "").Split(new string[] { "espacio" }, StringSplitOptions.RemoveEmptyEntries);
+                    string[] name = sintactica[i].Replace(";", "").Split(new string[] { "PRINCIPIO" }, StringSplitOptions.RemoveEmptyEntries);
                     namespaces = new CodeNamespace(name[name.Length - 1]);
                     sintactica.RemoveAt(i);
                     break;
@@ -95,29 +95,6 @@ namespace Proyecto1Consola.Clases
             // agregar el namespace
             compileUnit.Namespaces.Add(namespaces);
             // importar librerias que se usaran 
-            for (i = 0; i < sintactica.Count; i++)//codigo para terminar , no entra el switch
-            {
-                patron = "^(usar)";
-                if (Regex.IsMatch(sintactica[i], patron))
-                {
-                    string[] name = sintactica[i].Replace(";", "").ToLower().Split(new string[] { "usar" }, StringSplitOptions.RemoveEmptyEntries);
-                    string data = name[name.Length - 1].Replace(" ", "");
-                    switch (data)
-                    {
-                        case "sistema":
-                            namespaces.Imports.Add(new CodeNamespaceImport("System"));
-                            break;
-                        case "sistema.coleccion":
-                            namespaces.Imports.Add(new CodeNamespaceImport("System.Collections"));
-                            break;
-                        case "sistema.componentes":
-                            namespaces.Imports.Add(new CodeNamespaceImport("System.ComponentModel"));
-                            break;
-                    }
-                    sintactica.RemoveAt(i);//elimina el valor 
-                    i--;//retrocede la lista ...
-                }
-            }
             //creamos la clase de trabajo
             CodeTypeDeclaration clase = new CodeTypeDeclaration();
             for (i = 0; i < sintactica.Count; i++)
@@ -189,8 +166,8 @@ namespace Proyecto1Consola.Clases
                             //DE LAS DEMAS INSTRUCCIONES QUE NO SE ANIDAN A ESTAS.
                             for (k = i + 1; k < sintactica.Count; k++)
                             {
-                                patron = "^(si)";
-                                string patron_fin = "^(finsi)";
+                                patron = "^(SI)";
+                                string patron_fin = "^(FINSI)";
                                 if (Regex.IsMatch(sintactica[k], patron))
                                 {
                                     CondicionSintax.Add(sintactica[k]);
@@ -259,8 +236,8 @@ namespace Proyecto1Consola.Clases
                             MientrasSintax.Add(sintactica[i]);
                             for (k = i + 1; k < sintactica.Count; k++)
                             {
-                                patron = "^(mientras)";
-                                string patron_fin = "^(finmientras)";
+                                patron = "^(MIENTRAS)";
+                                string patron_fin = "^(FINMIENTRAS)";
                                 if (Regex.IsMatch(sintactica[k], patron))
                                 {
                                     MientrasSintax.Add(sintactica[k]);
@@ -291,8 +268,8 @@ namespace Proyecto1Consola.Clases
                             ParaSintax.Add(sintactica[i]);
                             for (k = i + 1; k < sintactica.Count; k++)
                             {
-                                patron = "^(para)";
-                                string patron_fin = "^(finpara)";
+                                patron = "^(PARA)";
+                                string patron_fin = "^(FINPARA)";
                                 if (Regex.IsMatch(sintactica[k], patron))
                                 {
                                     ParaSintax.Add(sintactica[k]);
@@ -732,7 +709,7 @@ namespace Proyecto1Consola.Clases
                 bool bandera = false;
                 for (int i = 0; i < clausulas.Count; i++)
                 {
-                    string patron = "^(entonces)";
+                    string patron = "^(ENTONCES)";
                     if (Regex.IsMatch(clausulas[i], patron)) bandera = true;
                     if (bandera == false)
                     {
@@ -744,8 +721,8 @@ namespace Proyecto1Consola.Clases
                                 CondicionSintax.Add(clausulas[i]);
                                 for (k = i + 1; k < clausulas.Count; k++)
                                 {
-                                    patron = "^(si)";
-                                    string patron_fin = "^(finsi)";
+                                    patron = "^(SI)";
+                                    string patron_fin = "^(FINSI)";
                                     if (Regex.IsMatch(clausulas[k], patron))
                                     {
                                         CondicionSintax.Add(clausulas[k]);
@@ -805,8 +782,8 @@ namespace Proyecto1Consola.Clases
                                 MientrasSintax.Add(clausulas[i]);
                                 for (k = i + 1; k < clausulas.Count; k++)
                                 {
-                                    patron = "^(mientras)";
-                                    string patron_fin = "^(finmientras)";
+                                    patron = "^(MIENTRAS)";
+                                    string patron_fin = "^(FINMIENTRAS)";
                                     if (Regex.IsMatch(clausulas[k], patron))
                                     {
                                         MientrasSintax.Add(clausulas[k]);
@@ -838,8 +815,8 @@ namespace Proyecto1Consola.Clases
                                 ParaSintax.Add(clausulas[i]);
                                 for (k = i + 1; k < clausulas.Count; k++)
                                 {
-                                    patron = "^(para)";
-                                    string patron_fin = "^(finpara)";
+                                    patron = "^(PARA)";
+                                    string patron_fin = "^(FINPARA)";
                                     if (Regex.IsMatch(clausulas[k], patron))
                                     {
                                         ParaSintax.Add(clausulas[k]);
@@ -902,8 +879,8 @@ namespace Proyecto1Consola.Clases
                                 CondicionSintax.Add(clausulas[i]);
                                 for (k = i + 1; k < clausulas.Count; k++)
                                 {
-                                    patron = "^(si)";
-                                    string patron_fin = "^(finsi)";
+                                    patron = "^(SI)";
+                                    string patron_fin = "^(FINSI)";
                                     if (Regex.IsMatch(clausulas[k], patron))
                                     {
                                         CondicionSintax.Add(clausulas[k]);
@@ -947,7 +924,6 @@ namespace Proyecto1Consola.Clases
                                         List<object> VarDum = TransformarVariable(clausulas[i], 2);
                                         if (VarDum.Count == 2)
                                         {
-
                                             condicion_inicial.FalseStatements.Add((CodeAssignStatement)CrearVariable(VarDum[0].ToString(),
                                                 typeof(object), 2,
                                                 MemberAttributes.Private,
@@ -963,8 +939,8 @@ namespace Proyecto1Consola.Clases
                                 MientrasSintax.Add(clausulas[i]);
                                 for (k = i + 1; k < clausulas.Count; k++)
                                 {
-                                    patron = "^(mientras)";
-                                    string patron_fin = "^(finmientras)";
+                                    patron = "^(MIENTRAS)";
+                                    string patron_fin = "^(FINMIENTRAS)";
                                     if (Regex.IsMatch(clausulas[k], patron))
                                     {
                                         MientrasSintax.Add(clausulas[k]);
@@ -996,8 +972,8 @@ namespace Proyecto1Consola.Clases
                                 ParaSintax.Add(clausulas[i]);
                                 for (k = i + 1; k < clausulas.Count; k++)
                                 {
-                                    patron = "^(para)";
-                                    string patron_fin = "^(finpara)";
+                                    patron = "^(PARA)";
+                                    string patron_fin = "^(FINPARA)";
                                     if (Regex.IsMatch(clausulas[k], patron))
                                     {
                                         ParaSintax.Add(clausulas[k]);
@@ -1074,7 +1050,7 @@ namespace Proyecto1Consola.Clases
             try
             {
                 int n = 0, k = 0, p = 0;
-                string[] clausula_inicial = clausulas[0].Split(new string[] { ";", "(", ")", "para" }, StringSplitOptions.RemoveEmptyEntries);
+                string[] clausula_inicial = clausulas[0].Split(new string[] { ";", "(", ")", "PARA" }, StringSplitOptions.RemoveEmptyEntries);
 
                 string[] StInicial = clausula_inicial[0].Split('=');
                 string[] StCondicio = new string[1];
@@ -1156,8 +1132,8 @@ namespace Proyecto1Consola.Clases
                             CondicionSintax.Add(clausulas[i]);
                             for (k = i + 1; k < clausulas.Count; k++)
                             {
-                                patron = "^(si)";
-                                string patron_fin = "^(finsi)";
+                                patron = "^(SI)";
+                                string patron_fin = "^(FINSI)";
                                 if (Regex.IsMatch(clausulas[k], patron))
                                 {
                                     CondicionSintax.Add(clausulas[k]);
@@ -1217,8 +1193,8 @@ namespace Proyecto1Consola.Clases
                             MientrasSintax.Add(clausulas[i]);
                             for (k = i + 1; k < clausulas.Count; k++)
                             {
-                                patron = "^(mientras)";
-                                string patron_fin = "^(finmientras)";
+                                patron = "^(MIENTRAS)";
+                                string patron_fin = "^(FINMIENTRAS)";
                                 if (Regex.IsMatch(clausulas[k], patron))
                                 {
                                     MientrasSintax.Add(clausulas[k]);
@@ -1250,8 +1226,8 @@ namespace Proyecto1Consola.Clases
                             ParaSintax.Add(clausulas[i]);
                             for (k = i + 1; k < clausulas.Count; k++)
                             {
-                                patron = "^(para)";
-                                string patron_fin = "^(finpara)";
+                                patron = "^(PARA)";
+                                string patron_fin = "^(FINPARA)";
                                 if (Regex.IsMatch(clausulas[k], patron))
                                 {
                                     ParaSintax.Add(clausulas[k]);
@@ -1328,7 +1304,7 @@ namespace Proyecto1Consola.Clases
             try
             {
                 int k = 0, p = 0;
-                string[] clausula_inicial = clausulas[0].Split(new string[] { "(", ")", "mientras" }, StringSplitOptions.RemoveEmptyEntries);
+                string[] clausula_inicial = clausulas[0].Split(new string[] { "(", ")", "MIENTRASS" }, StringSplitOptions.RemoveEmptyEntries);
 
                 MientrasStatement.InitStatement = new CodeSnippetStatement();
 
@@ -1348,8 +1324,8 @@ namespace Proyecto1Consola.Clases
                             CondicionSintax.Add(clausulas[i]);
                             for (k = i + 1; k < clausulas.Count; k++)
                             {
-                                patron = "^(si)";
-                                string patron_fin = "^(finsi)";
+                                patron = "^(SI)";
+                                string patron_fin = "^(FINSI)";
                                 if (Regex.IsMatch(clausulas[k], patron))
                                 {
                                     CondicionSintax.Add(clausulas[k]);
@@ -1409,8 +1385,8 @@ namespace Proyecto1Consola.Clases
                             MientrasSintax.Add(clausulas[i]);
                             for (k = i + 1; k < clausulas.Count; k++)
                             {
-                                patron = "^(mientras)";
-                                string patron_fin = "^(finmientras)";
+                                patron = "^(MIENTRAS)";
+                                string patron_fin = "^(FINMIENTRAS)";
                                 if (Regex.IsMatch(clausulas[k], patron))
                                 {
                                     MientrasSintax.Add(clausulas[k]);
@@ -1442,8 +1418,8 @@ namespace Proyecto1Consola.Clases
                             ParaSintax.Add(clausulas[i]);
                             for (k = i + 1; k < clausulas.Count; k++)
                             {
-                                patron = "^(para)";
-                                string patron_fin = "^(finpara)";
+                                patron = "^(PARA)";
+                                string patron_fin = "^(FINPARA)";
                                 if (Regex.IsMatch(clausulas[k], patron))
                                 {
                                     ParaSintax.Add(clausulas[k]);
@@ -1566,7 +1542,7 @@ namespace Proyecto1Consola.Clases
             if (cr.Errors.Count > 0)
             {
 
-                algun_error.Add("Error " + sourceFile + " dentro de [ " + cr.PathToAssembly + " ] IL chumpe ");
+                algun_error.Add("Error " + sourceFile + " dentro de [ " + cr.PathToAssembly + " ] IL IDE lENGUAJES ");
                 foreach (CompilerError ce in cr.Errors)
                 {
 

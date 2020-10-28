@@ -21,8 +21,8 @@ namespace Proyecto1Consola
         {
             InitializeComponent();
         }
-
-        #region variables
+        //Regiones de cada estructura usada en el programa
+        #region variables a usar 
 
         private bool Poblamiento = true;
         private LectorSintaxis LectorSintactico;
@@ -81,7 +81,7 @@ namespace Proyecto1Consola
         }
         private Color MostrarColor(string s)
         {
-            Color Color = Color.Orange;
+            Color Color = Color.Black;
 
             if (LectorSintactico.IsFuncion(s))
             {
@@ -97,6 +97,7 @@ namespace Proyecto1Consola
             {
                 Color = Color.Blue;
             }
+            
 
 
             return Color;
@@ -285,7 +286,7 @@ namespace Proyecto1Consola
             try
             {
                 toolProgreso.Increment(20);
-                //toolnotificaciones.Text = "Analizando codigo... (20%)";
+                toolnotificaciones.Text = "Analizando codigo... (20%)";
                 List<string> Codigo = new List<string>();
                 Codigo.AddRange(richTextBox1.Lines);
                 semantico.SetCodigoAnalizar(Codigo);
@@ -303,7 +304,7 @@ namespace Proyecto1Consola
                     }
 
 
-                    //    toolnotificaciones.Text = "sin notificaciones...";
+                        toolnotificaciones.Text = "sin notificaciones...";
                     toolProgreso.Increment(100);
                     return;
                 }
@@ -319,7 +320,7 @@ namespace Proyecto1Consola
                 string nombre = trozo_direccion[trozo_direccion.Length - 1];
                 if (nombre == "" || string.IsNullOrEmpty(nombre))
                     nombre = "Lenguajes";
-                //  toolnotificaciones.Text = "Compilando... (60%)";
+                  toolnotificaciones.Text = "Compilando... (60%)";
                 toolProgreso.Increment(60);
 
                 var d = compilador.CheckCodigoAcompilar(CodigoComputado);
@@ -334,7 +335,7 @@ namespace Proyecto1Consola
                     p.StartInfo = psi;
                     p.Start();
                     toolErrorSintaxis.Text = "EL trabajo se a copilado ";
-                    //    toolnotificaciones.Text = "sin notificaciones...";
+                       toolnotificaciones.Text = "sin notificaciones...";
                 }
                 else
                 {
@@ -396,7 +397,7 @@ namespace Proyecto1Consola
         private void button1_Click(object sender, EventArgs e)
         {
 
-            // toolnotificaciones.Text = "Compilando espere..";
+            toolnotificaciones.Text = "Compilando espere..";
             toolProgreso.Style = ProgressBarStyle.Continuous;
             toolProgreso.Overflow = ToolStripItemOverflow.Always;
             toolProgreso.Increment(10);

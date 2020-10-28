@@ -21,7 +21,6 @@ namespace Proyecto1Consola.Clases
                 SaveFileDialog save_ = new SaveFileDialog();
                 save_.Filter = "(.gtE)|*.gtE";
 
-
                 if (save_.ShowDialog() == DialogResult.OK)
                 {
                     if (!save_.CheckFileExists)
@@ -32,7 +31,7 @@ namespace Proyecto1Consola.Clases
                     else
                     {
                         DialogResult result = MessageBox.Show("¿Este archivo ya esta en uso desea sobre-escribir ?"
-                            , " Archivo EXISTENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                            , " Archivo ya existe", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         if (result == DialogResult.Yes)
                         {
                             Direccion = save_.FileName;

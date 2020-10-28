@@ -18,6 +18,7 @@ namespace Proyecto1Consola.Clases
 		private ArrayList Funciones = new ArrayList();
 		private ArrayList Comentario = new ArrayList();
 		private ArrayList Separadores = new ArrayList();
+		private ArrayList Decimales = new ArrayList();
 
 		public ArrayList GetLlaves() { return this.Llaves; }
 
@@ -26,6 +27,9 @@ namespace Proyecto1Consola.Clases
 		public ArrayList GetComentarios() { return this.Comentario; }
 
 		public ArrayList GetSeparadores() { return this.Separadores; }
+
+        public ArrayList GetDecimales() { return this.Decimales; }
+
 
 		public LectorSintaxis(string archivo)
 		{
@@ -132,7 +136,27 @@ namespace Proyecto1Consola.Clases
 
 					}
 				}
+				if (SigLinea == "Decimal")
+				{
+					SigLinea = sr.ReadLine();
+					if (SigLinea != null)
+						SigLinea = SigLinea.Trim();
+					while (SigLinea != null && SigLinea[0] != '['
+						)
+					{
+						Separadores.Add(@SigLinea);
 
+						SigLinea = "";
+						while (SigLinea != null && SigLinea == "")
+						{
+							SigLinea = sr.ReadLine();
+							if (SigLinea != null)
+								SigLinea = SigLinea.Trim();
+						}
+
+					}
+
+				}
 				if (SigLinea != null && SigLinea.Length > 0 && SigLinea[0] == '[')
 				{
 				}
@@ -148,7 +172,7 @@ namespace Proyecto1Consola.Clases
 			Funciones.Sort();
 			Comentario.Sort();
 			Separadores.Sort();
-
+			Decimales.Sort();
 		}
 
 		public bool IsLlave(string s)

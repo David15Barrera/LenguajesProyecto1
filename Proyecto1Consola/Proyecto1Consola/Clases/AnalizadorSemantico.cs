@@ -97,23 +97,22 @@ namespace Proyecto1Consola.Clases
             PALABRAS_RESERVADAS_.Add("continuar");
             PALABRAS_RESERVADAS_.Add("retornar");
 
-            EXPRESIONES_.Add("si");
-            EXPRESIONES_.Add("entonces");
-            EXPRESIONES_.Add("mientras");
-            EXPRESIONES_.Add("para");
+            EXPRESIONES_.Add("SI");
+            EXPRESIONES_.Add("ENTONCES");
+            EXPRESIONES_.Add("MIENTRAS");
+            EXPRESIONES_.Add("PARA");
 
-            DELIMITADORES.Add("finsi");
-            DELIMITADORES.Add("finpara");
-            DELIMITADORES.Add("finmientras");
+            DELIMITADORES.Add("FINSI");
+            DELIMITADORES.Add("FINPARA");
+            DELIMITADORES.Add("FINMIENTRAS");
 
-            FUNCIONES_.Add("pi");
-            FUNCIONES_.Add("e");
-            FUNCIONES_.Add("chumpe");
+            FUNCIONES_.Add("PI");
+            FUNCIONES_.Add("Lenguaje");
             FUNCIONES_.Add("espacio");
-            FUNCIONES_.Add("Inicio");
-            FUNCIONES_.Add("sistema");
-            FUNCIONES_.Add("imprimir");
-            FUNCIONES_.Add("leer");
+            FUNCIONES_.Add("PRINCIPAL");
+            FUNCIONES_.Add("SISTEMA");
+            FUNCIONES_.Add("IMPRIMIR");
+            FUNCIONES_.Add("LEER");
 
             SEPARADORES_.Add("{");
             SEPARADORES_.Add("}");
@@ -232,7 +231,7 @@ namespace Proyecto1Consola.Clases
             int espacio = 0;
             foreach (string c in Codigo)
             {
-                int index = c.IndexOf("Inicio");
+                int index = c.IndexOf("PRINCIPAL");
                 if (index != -1)
                 {
                     espacio++;
@@ -240,12 +239,12 @@ namespace Proyecto1Consola.Clases
             }
             if (espacio >= 2)
             {
-                this.ERRORES_.Add("Error: No se puede nombrar dos inicios en el mismo contexto ");
+                this.ERRORES_.Add("Error: No se puede nombrar dos PRINCIPIOS en el mismo contexto ");
                 return true;
             }
             else if (espacio == 0)
             {
-                this.ERRORES_.Add("Error: El Inicio de trabajo no ha sido nombrado ");
+                this.ERRORES_.Add("Error: El PRINCIPIO de trabajo no ha sido nombrado ");
                 return true;
             }
             else return false;
@@ -414,7 +413,7 @@ namespace Proyecto1Consola.Clases
                 string dim = Dimensionales.Dequeue();
                 foreach (string tokens in lista_tokens)
                 {
-                    bool c = dim.Contains(tokens);
+                    bool c = dim.Contains(tokens); 
                     if (c)
                     {
                         string[] trozo = dim.Replace(tokens, "").Replace("publico", "").Replace("privado", "").Replace("protegido", "").Replace("virtual", "").Replace(" ", "").Replace(";", "").Split('=');
