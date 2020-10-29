@@ -21,3 +21,14 @@ C:\Users\Usuario\source\repos\LenguajesProyecto1\Proyecto1Consola\Proyecto1Conso
 C:\Users\Usuario\source\repos\LenguajesProyecto1\Proyecto1Consola\Proyecto1Consola\obj\Debug\Proyecto1Consola.exe
 C:\Users\Usuario\source\repos\LenguajesProyecto1\Proyecto1Consola\Proyecto1Consola\obj\Debug\Proyecto1Consola.pdb
 C:\Users\Usuario\source\repos\Proyecto1Consola\Proyecto1Consola\obj\Debug\Proyecto1Consola.ErroresDeTokens.resources
+C:\Users\Usuario\Documents\My Web Sites\LenguajesProyecto1-master\Proyecto1Consola\Proyecto1Consola\bin\Debug\Proyecto1Consola.exe.config
+C:\Users\Usuario\Documents\My Web Sites\LenguajesProyecto1-master\Proyecto1Consola\Proyecto1Consola\bin\Debug\Proyecto1Consola.exe
+C:\Users\Usuario\Documents\My Web Sites\LenguajesProyecto1-master\Proyecto1Consola\Proyecto1Consola\bin\Debug\Proyecto1Consola.pdb
+C:\Users\Usuario\Documents\My Web Sites\LenguajesProyecto1-master\Proyecto1Consola\Proyecto1Consola\obj\Debug\Proyecto1Consola.csprojAssemblyReference.cache
+C:\Users\Usuario\Documents\My Web Sites\LenguajesProyecto1-master\Proyecto1Consola\Proyecto1Consola\obj\Debug\Proyecto1Consola.Form1.resources
+C:\Users\Usuario\Documents\My Web Sites\LenguajesProyecto1-master\Proyecto1Consola\Proyecto1Consola\obj\Debug\Proyecto1Consola.Form2.resources
+C:\Users\Usuario\Documents\My Web Sites\LenguajesProyecto1-master\Proyecto1Consola\Proyecto1Consola\obj\Debug\Proyecto1Consola.Properties.Resources.resources
+C:\Users\Usuario\Documents\My Web Sites\LenguajesProyecto1-master\Proyecto1Consola\Proyecto1Consola\obj\Debug\Proyecto1Consola.csproj.GenerateResource.cache
+C:\Users\Usuario\Documents\My Web Sites\LenguajesProyecto1-master\Proyecto1Consola\Proyecto1Consola\obj\Debug\Proyecto1Consola.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\My Web Sites\LenguajesProyecto1-master\Proyecto1Consola\Proyecto1Consola\obj\Debug\Proyecto1Consola.exe
+C:\Users\Usuario\Documents\My Web Sites\LenguajesProyecto1-master\Proyecto1Consola\Proyecto1Consola\obj\Debug\Proyecto1Consola.pdb

@@ -9,6 +9,7 @@ virtual
 SINO
 SINO_SI
 SI
+si
 HACER
 DESDE
 HASTA
@@ -34,8 +35,8 @@ finmientras
 [FUNCIONES]
 pi
 e
+Inicio
 PRINCIPAL
-ESCRIBIR
 espacio
 1
 2
@@ -69,17 +70,7 @@ leer
 >=
 <
 >
+[ 
+]
 
-[DECIMAL]
-1
-2
-3
-4
-5
-6
-7
-8
-9
-0
 
-For 1 to 10

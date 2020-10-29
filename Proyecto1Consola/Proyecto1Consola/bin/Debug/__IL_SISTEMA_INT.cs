@@ -8,13 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
-
-public class  {
+namespace  Lenguajes {
     
-    public static void Main() {
-        System.Console.WriteLine("leer");
-        int a = 0;
-        System.Console.ReadLine();
+    
+    public class hola {
+        
+        public static void Main() {
+            System.Console.ReadLine();
+        }
     }
 }
