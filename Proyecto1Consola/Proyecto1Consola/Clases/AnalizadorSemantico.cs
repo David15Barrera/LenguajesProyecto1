@@ -108,9 +108,9 @@ namespace Proyecto1Consola.Clases
 
             FUNCIONES_.Add("pi");
             FUNCIONES_.Add("e");
+            FUNCIONES_.Add("PRINCIPAL");
             FUNCIONES_.Add("chumpe");
             FUNCIONES_.Add("espacio");
-            FUNCIONES_.Add("PRINCIPAL");
             FUNCIONES_.Add("Inicio");
             FUNCIONES_.Add("sistema");
             FUNCIONES_.Add("imprimir");
@@ -300,7 +300,7 @@ namespace Proyecto1Consola.Clases
                                 switch (analisis_sentencia_correcta)
                                 {
                                     case (int)ERR_SECUENCIA.DELIMITADOR_COMA:
-                                        this.ERRORES_.Add("Error: No se encuentra el (;) cerca de la linea " + C);
+                                        this.ERRORES_.Add("Error: No se encuentra el delimitador (;) cerca de la linea " + C);
                                         return true;
                                 }
                             }

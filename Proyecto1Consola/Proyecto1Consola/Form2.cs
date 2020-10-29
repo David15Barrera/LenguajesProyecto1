@@ -319,7 +319,7 @@ namespace Proyecto1Consola
                 string nombre = trozo_direccion[trozo_direccion.Length - 1];
                 if (nombre == "" || string.IsNullOrEmpty(nombre))
                     nombre = "Lenguajes";
-                // toolnotificaciones.Text = "Compilando... (60%)";
+                //  toolnotificaciones.Text = "Compilando... (60%)";
                 toolProgreso.Increment(60);
 
                 var d = compilador.CheckCodigoAcompilar(CodigoComputado);

@@ -220,7 +220,7 @@ namespace Proyecto1Consola.Clases
                             break;
                         case EXPRESIONES.VARIABLE:
                             try
-                            {//ERROR AL  COLOCAR SOLO LA ESTRUCUTURA DEL INICIO
+                            {
                                 List<object> VarDum = TransformarVariable(sintaxis, 1);
                                 Main.Statements.Add((CodeVariableDeclarationStatement)CrearVariable(VarDum[1].ToString(),
                                   (Type)VarDum[0], 1,
@@ -1566,7 +1566,7 @@ namespace Proyecto1Consola.Clases
             if (cr.Errors.Count > 0)
             {
 
-                algun_error.Add("Error " + sourceFile + " dentro de [ " + cr.PathToAssembly + " ] acerca de compilacion ");
+                algun_error.Add("Error " + sourceFile + " dentro de [ " + cr.PathToAssembly + " ] archivo de compilacion ");
                 foreach (CompilerError ce in cr.Errors)
                 {
 

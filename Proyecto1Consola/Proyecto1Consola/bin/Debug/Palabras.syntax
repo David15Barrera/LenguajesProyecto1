@@ -10,6 +10,7 @@ SINO
 SINO_SI
 SI
 si
+sino_si
 HACER
 DESDE
 HASTA
@@ -35,8 +36,8 @@ finmientras
 [FUNCIONES]
 pi
 e
-Inicio
 PRINCIPAL
+Inicio
 espacio
 1
 2
@@ -70,7 +71,5 @@ leer
 >=
 <
 >
-[ 
-]
 
 
