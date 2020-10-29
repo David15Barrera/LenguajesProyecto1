@@ -32,3 +32,4 @@ C:\Users\Usuario\Documents\PaperMate\LenguajesProyecto1-master\Proyecto1Consola\
 C:\Users\Usuario\Documents\PaperMate\LenguajesProyecto1-master\Proyecto1Consola\Proyecto1Consola\obj\Debug\Proyecto1Consola.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Documents\PaperMate\LenguajesProyecto1-master\Proyecto1Consola\Proyecto1Consola\obj\Debug\Proyecto1Consola.exe
 C:\Users\Usuario\Documents\PaperMate\LenguajesProyecto1-master\Proyecto1Consola\Proyecto1Consola\obj\Debug\Proyecto1Consola.pdb
+C:\Users\Usuario\source\repos\LenguajesProyecto1\Proyecto1Consola\Proyecto1Consola\obj\Debug\Proyecto1Consola.ArbolForm.resources

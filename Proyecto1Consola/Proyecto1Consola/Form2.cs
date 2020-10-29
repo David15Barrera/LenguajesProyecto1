@@ -396,7 +396,7 @@ namespace Proyecto1Consola
         private void button1_Click(object sender, EventArgs e)
         {
 
-            // toolnotificaciones.Text = "Compilando espere..";
+            //toolnotificaciones.Text = "Compilando espere..";
             toolProgreso.Style = ProgressBarStyle.Continuous;
             toolProgreso.Overflow = ToolStripItemOverflow.Always;
             toolProgreso.Increment(10);
@@ -409,7 +409,9 @@ namespace Proyecto1Consola
             hilo.Start();
             button2.Enabled = true;
             button3.Enabled = true;
-        }
+            ArbolForm formulario = new ArbolForm();
+            formulario.Show();
+               }
 
         //Codigo para la utilizacion de los codigos de la misma
         private void informacionToolStripMenuItem_Click(object sender, EventArgs e)

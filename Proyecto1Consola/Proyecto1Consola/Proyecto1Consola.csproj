@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArbolForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArbolForm.Designer.cs">
+      <DependentUpon>ArbolForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\AnalizadorLexico.cs" />
     <Compile Include="Clases\AnalizadorSemantico.cs" />
     <Compile Include="Clases\Archivos.cs" />
@@ -68,6 +74,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ArbolForm.resx">
+      <DependentUpon>ArbolForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
