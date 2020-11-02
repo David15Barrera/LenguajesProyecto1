@@ -56,6 +56,7 @@
     <Compile Include="Clases\AnalizadorSemantico.cs" />
     <Compile Include="Clases\Archivos.cs" />
     <Compile Include="Clases\Compilador.cs" />
+    <Compile Include="Clases\Grahviz.cs" />
     <Compile Include="Clases\LectorSintactico.cs" />
     <Compile Include="FlickerFreeRichEditTextBox.cs">
       <SubType>Component</SubType>

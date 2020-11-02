@@ -54,6 +54,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -295,12 +296,23 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "--";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(644, 305);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(80, 25);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "Arbol";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto1Consola.Properties.Resources.Fondo1;
             this.ClientSize = new System.Drawing.Size(793, 507);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button3);
@@ -355,5 +367,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button4;
     }
 }

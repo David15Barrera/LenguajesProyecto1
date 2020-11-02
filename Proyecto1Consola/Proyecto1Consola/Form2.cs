@@ -55,7 +55,7 @@ namespace Proyecto1Consola
             string testString = s.Trim();
             if ((testString.Length >= 2) &&
                  (testString[0] == '/') &&
-                 (testString[1] == '/')
+                 (testString[1] == '/') 
                 )
                 return true;
 
@@ -81,7 +81,7 @@ namespace Proyecto1Consola
         }
         private Color MostrarColor(string s)
         {
-            Color Color = Color.Orange;
+            Color Color = Color.Black;
 
             if (LectorSintactico.IsFuncion(s))
             {
@@ -97,8 +97,6 @@ namespace Proyecto1Consola
             {
                 Color = Color.Blue;
             }
-
-
             return Color;
         }
 
@@ -148,6 +146,59 @@ namespace Proyecto1Consola
                         richTextBox1.SelectionColor = this.comentario;
 
                     }
+                    if (wp.Word == "/" && previousWord == "/")
+                    {
+
+                        int posCommentStart = wp.Position - 1;
+                        int posCommentEnd = pos2;
+                        while (wp.Word != "\n" && i < count)
+                        {
+                            wp = TheBuffer[i];
+                            i++;
+                        }
+
+                        i--;
+                        posCommentEnd = pos2;
+                        richTextBox1.Select(posCommentStart + pos, posCommentEnd - (posCommentStart + pos));
+                        richTextBox1.SelectionColor = this.comentario;
+
+                    }
+                    if (wp.Word == "/" && previousWord == "*")
+                    {
+
+                        int posCommentStart = wp.Position - 1;
+                        int posCommentEnd = pos2;
+                        while (wp.Word != "\n" && i < count)
+                        {
+                            wp = TheBuffer[i];
+                            i++;
+                        }
+
+                        i--;
+                        posCommentEnd = pos2;
+                        richTextBox1.Select(posCommentStart + pos, posCommentEnd - (posCommentStart + pos));
+                        richTextBox1.SelectionColor = this.comentario;
+
+                    }
+                    if (wp.Word == "*" && previousWord == "/")
+                    {
+
+                        int posCommentStart = wp.Position - 1;
+                        int posCommentEnd = pos2;
+                        while (wp.Word != "\n" && i < count)
+                        {
+                            wp = TheBuffer[i];
+                            i++;
+                        }
+
+                        i--;
+                        posCommentEnd = pos2;
+                        richTextBox1.Select(posCommentStart + pos, posCommentEnd - (posCommentStart + pos));
+                        richTextBox1.SelectionColor = this.comentario;
+
+                    }
+
+
                     else
                     {
 
@@ -199,6 +250,61 @@ namespace Proyecto1Consola
                     richTextBox1.SelectionColor = this.comentario;
 
                 }
+                if (wp.Word == "/" && previousWord == "/")
+                {
+
+                    int posCommentStart = wp.Position - 1;
+                    int posCommentEnd = i;
+                    while (wp.Word != "\n" && i < count)
+                    {
+                        wp = TheBuffer[i];
+                        i++;
+                    }
+
+                    i--;
+
+                    posCommentEnd = wp.Position;
+                    richTextBox1.Select(posCommentStart, posCommentEnd - posCommentStart);
+                    richTextBox1.SelectionColor = this.comentario;
+
+                }
+                if (wp.Word == "*" && previousWord == "/")
+                {
+
+                    int posCommentStart = wp.Position - 1;
+                    int posCommentEnd = i;
+                    while (wp.Word != "\n" && i < count)
+                    {
+                        wp = TheBuffer[i];
+                        i++;
+                    }
+
+                    i--;
+
+                    posCommentEnd = wp.Position;
+                    richTextBox1.Select(posCommentStart, posCommentEnd - posCommentStart);
+                    richTextBox1.SelectionColor = this.comentario;
+
+                }
+                if (wp.Word == "/" && previousWord == "*")
+                {
+
+                    int posCommentStart = wp.Position - 1;
+                    int posCommentEnd = i;
+                    while (wp.Word != "\n" && i < count)
+                    {
+                        wp = TheBuffer[i];
+                        i++;
+                    }
+
+                    i--;
+
+                    posCommentEnd = wp.Position;
+                    richTextBox1.Select(posCommentStart, posCommentEnd - posCommentStart);
+                    richTextBox1.SelectionColor = this.comentario;
+
+                }
+
                 else
                 {
 
@@ -409,8 +515,7 @@ namespace Proyecto1Consola
             hilo.Start();
             button2.Enabled = true;
             button3.Enabled = true;
-            ArbolForm formulario = new ArbolForm();
-            formulario.Show();
+
                }
 
         //Codigo para la utilizacion de los codigos de la misma
@@ -509,6 +614,12 @@ namespace Proyecto1Consola
             label3.Text = Convert.ToString((line + 1));
             label4.Text = Convert.ToString(column);
             richTextBox1.SelectionColor = Color.White;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ArbolForm formulario = new ArbolForm();
+            formulario.Show();
         }
     }
 }
