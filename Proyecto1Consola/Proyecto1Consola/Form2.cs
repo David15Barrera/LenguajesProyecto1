@@ -620,6 +620,7 @@ namespace Proyecto1Consola
         {
             ArbolForm formulario = new ArbolForm();
             formulario.Show();
-        }
+            Grahviz concexion = new Grahviz();
+            }
     }
 }
