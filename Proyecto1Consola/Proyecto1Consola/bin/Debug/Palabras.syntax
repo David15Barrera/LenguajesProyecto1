@@ -6,17 +6,7 @@ virtual
 ;
 
 
-SINO
-SINO_SI
-SI
-si
-sino_si
-HACER
-DESDE
-HASTA
 usar
-INCREMENTO
-entonces
 entero
 decimal
 flotante
@@ -39,6 +29,17 @@ e
 PRINCIPAL
 Inicio
 espacio
+SINO
+SINO_SI
+SI
+si
+sino_si
+HACER
+DESDE
+HASTA
+INCREMENTO
+entonces
+
 1
 2
 2
