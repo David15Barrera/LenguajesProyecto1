@@ -732,7 +732,7 @@ namespace Proyecto1Consola.Clases
                 bool bandera = false;
                 for (int i = 0; i < clausulas.Count; i++)
                 {
-                    string patron = "^(entonces)";
+                    string patron = "^(sino_si)";
                     if (Regex.IsMatch(clausulas[i], patron)) bandera = true;
                     if (bandera == false)
                     {
@@ -1566,7 +1566,7 @@ namespace Proyecto1Consola.Clases
             if (cr.Errors.Count > 0)
             {
 
-                algun_error.Add("Error " + sourceFile + " dentro de [ " + cr.PathToAssembly + " ] archivo de compilacion ");
+                algun_error.Add("Error dentro de  archivo de compilacion ");
                 foreach (CompilerError ce in cr.Errors)
                 {
 
