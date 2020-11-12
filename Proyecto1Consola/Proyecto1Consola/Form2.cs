@@ -368,6 +368,7 @@ namespace Proyecto1Consola
             this.richTextBox1.AcceptsTab = true;
             button2.Enabled = false;
             button3.Enabled = false;
+            richTextBox1.Visible = false;
             // tabControl1.Visible = false;
             //  richTextBox1.Select();
             //  richTextBox1.DetectUrls = true;
@@ -469,18 +470,22 @@ namespace Proyecto1Consola
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox1.Text = "";
+            CodigoInicio();
+            richTextBox1.Visible = true;
             if (Archivos.Direccion != null) Archivos.Direccion = null;
         }
 
         private void cerrarProyectoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox1.Text = "";
+            richTextBox1.Visible = false;
             if (Archivos.Direccion != null) Archivos.Direccion = null;
         }
 
         private void crearToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //  abrirarchivo();
+            richTextBox1.Visible = true;
             try
             {
                 string[] datos = Archivos.AbrirArchivo();

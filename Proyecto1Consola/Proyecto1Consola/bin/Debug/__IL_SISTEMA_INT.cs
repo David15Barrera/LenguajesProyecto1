@@ -11,7 +11,7 @@
 namespace  Lenguajes {
     
     
-    public class hola {
+    public class  {
         
         public static void Main() {
             System.Console.ReadLine();

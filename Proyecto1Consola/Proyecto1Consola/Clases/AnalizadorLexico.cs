@@ -383,7 +383,7 @@ namespace Proyecto1Consola.Clases
                                     ini_si++;
                                     err = ANALIZAR_CONDICION_EXPRESIONES(pop_exp, 0);
                                     break;
-                                case "entonces":
+                                case "sino_si":
                                     ini_entonces++;
                                     err = ANALIZAR_CONDICION_EXPRESIONES(pop_exp, 1);
                                     break;
