@@ -18,6 +18,11 @@ namespace Proyecto1Consola.Clases
 		private ArrayList Funciones = new ArrayList();
 		private ArrayList Comentario = new ArrayList();
 		private ArrayList Separadores = new ArrayList();
+		private ArrayList trueoflasee = new ArrayList();
+		private ArrayList cadena = new ArrayList();
+		private ArrayList Entero = new ArrayList();
+		private ArrayList Caracter = new ArrayList();
+		private ArrayList Decimal = new ArrayList();
 
 		public ArrayList GetLlaves() { return this.Llaves; }
 
@@ -26,6 +31,15 @@ namespace Proyecto1Consola.Clases
 		public ArrayList GetComentarios() { return this.Comentario; }
 
 		public ArrayList GetSeparadores() { return this.Separadores; }
+
+		public ArrayList Gettrueoflasee() { return this.trueoflasee; }
+
+		public ArrayList Getcadena() { return this.cadena; }
+
+		public ArrayList GetCaracter() { return this.Caracter; }
+
+		public ArrayList GetEntero() { return this.Entero; }
+		public ArrayList GetDecimal() { return this.Decimal; }
 
 		public LectorSintaxis(string archivo)
 		{
@@ -132,6 +146,112 @@ namespace Proyecto1Consola.Clases
 
 					}
 				}
+				if (SigLinea == "[trueoflasee]")
+				{
+
+					SigLinea = sr.ReadLine();
+					if (SigLinea != null)
+						SigLinea = SigLinea.Trim();
+					while (SigLinea != null && SigLinea[0] != '['
+						)
+					{
+						trueoflasee.Add(SigLinea);
+						trueoflasee.Add(SigLinea.ToUpper());
+						SigLinea = "";
+						while (SigLinea != null && SigLinea == "")
+						{
+							SigLinea = sr.ReadLine();
+							if (SigLinea != null)
+								SigLinea = SigLinea.Trim();
+						}
+
+					}
+				}
+				if (SigLinea == "[CADENA]")
+				{
+
+					SigLinea = sr.ReadLine();
+					if (SigLinea != null)
+						SigLinea = SigLinea.Trim();
+					while (SigLinea != null && SigLinea[0] != '['
+						)
+					{
+						cadena.Add(SigLinea);
+						cadena.Add(SigLinea.ToUpper());
+						SigLinea = "";
+						while (SigLinea != null && SigLinea == "")
+						{
+							SigLinea = sr.ReadLine();
+							if (SigLinea != null)
+								SigLinea = SigLinea.Trim();
+						}
+
+					}
+				}
+				if (SigLinea == "[ENTERO]")
+				{
+
+					SigLinea = sr.ReadLine();
+					if (SigLinea != null)
+						SigLinea = SigLinea.Trim();
+					while (SigLinea != null && SigLinea[0] != '['
+						)
+					{
+						Entero.Add(SigLinea);
+						Entero.Add(SigLinea.ToUpper());
+						SigLinea = "";
+						while (SigLinea != null && SigLinea == "")
+						{
+							SigLinea = sr.ReadLine();
+							if (SigLinea != null)
+								SigLinea = SigLinea.Trim();
+						}
+
+					}
+				}
+				if (SigLinea == "[CARACTER]")
+				{
+
+					SigLinea = sr.ReadLine();
+					if (SigLinea != null)
+						SigLinea = SigLinea.Trim();
+					while (SigLinea != null && SigLinea[0] != '['
+						)
+					{
+						Caracter.Add(SigLinea);
+						Caracter.Add(SigLinea.ToUpper());
+						SigLinea = "";
+						while (SigLinea != null && SigLinea == "")
+						{
+							SigLinea = sr.ReadLine();
+							if (SigLinea != null)
+								SigLinea = SigLinea.Trim();
+						}
+
+					}
+				}
+				if (SigLinea == "[DECIMAL]")
+				{
+
+					SigLinea = sr.ReadLine();
+					if (SigLinea != null)
+						SigLinea = SigLinea.Trim();
+					while (SigLinea != null && SigLinea[0] != '['
+						)
+					{
+						Decimal.Add(SigLinea);
+						Decimal.Add(SigLinea.ToUpper());
+						SigLinea = "";
+						while (SigLinea != null && SigLinea == "")
+						{
+							SigLinea = sr.ReadLine();
+							if (SigLinea != null)
+								SigLinea = SigLinea.Trim();
+						}
+
+					}
+				}
+
 
 				if (SigLinea != null && SigLinea.Length > 0 && SigLinea[0] == '[')
 				{
@@ -148,7 +268,11 @@ namespace Proyecto1Consola.Clases
 			Funciones.Sort();
 			Comentario.Sort();
 			Separadores.Sort();
-
+			trueoflasee.Sort();
+			cadena.Sort();
+			Entero.Sort();
+			Caracter.Sort();
+			Decimal.Sort();
 		}
 
 		public bool IsLlave(string s)
@@ -182,6 +306,51 @@ namespace Proyecto1Consola.Clases
 		{
 
 			int index = Separadores.BinarySearch(s);
+			if (index >= 0)
+				return true;
+
+			return false;
+		}
+		public bool Istrueoflasee(string s)
+		{
+
+			int index = trueoflasee.BinarySearch(s);
+			if (index >= 0)
+				return true;
+
+			return false;
+		}
+		public bool Iscadena(string s)
+		{
+
+			int index = cadena.BinarySearch(s);
+			if (index >= 0)
+				return true;
+
+			return false;
+		}
+		public bool IsEntero(string s)
+		{
+
+			int index = Entero.BinarySearch(s);
+			if (index >= 0)
+				return true;
+
+			return false;
+		}
+		public bool IsCaracter(string s)
+		{
+
+			int index = Caracter.BinarySearch(s);
+			if (index >= 0)
+				return true;
+
+			return false;
+		}
+		public bool IsDecimal(string s)
+		{
+
+			int index = Decimal.BinarySearch(s);
 			if (index >= 0)
 				return true;
 

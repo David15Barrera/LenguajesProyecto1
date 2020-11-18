@@ -214,7 +214,7 @@ namespace Proyecto1Consola.Clases
                                 j--;
                                 k--;
                             }
-                            //ACA EN ESTE PUNTO AGREGA LA CONDICION DE ACUERDO LAS METRICAS
+                            //ACA EN ESTE PUNTO AGREGA LA CONDICION DE ACUERDO LAS METRICAS, ERORO DE CONSTRUCCION DE METODOS
                             Main.Statements.Add(CrearCondicional(CondicionSintax, clase.Members, Main.Statements));
                             i = 0;
                             break;
@@ -234,7 +234,6 @@ namespace Proyecto1Consola.Clases
                             {
                                 /*
                                  * PEQUEÑO ERROR CONTROLADO DE VARIABLES,
-                                 * EN UN FUTURO SE PUEDE MEJORAR ARREGLANDO LA EXPRESION REGULAR.
                                  */
                                 try
                                 {

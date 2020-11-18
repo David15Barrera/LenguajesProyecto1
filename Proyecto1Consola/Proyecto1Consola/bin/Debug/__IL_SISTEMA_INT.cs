@@ -11,9 +11,12 @@
 namespace  Lenguajes {
     
     
-    public class  {
+    public class hola {
         
         public static void Main() {
+            System.Console.WriteLine("leer");
+            int a = 0;
+            System.Console.WriteLine("\"hola\"");
             System.Console.ReadLine();
         }
     }

@@ -97,6 +97,26 @@ namespace Proyecto1Consola
             {
                 Color = Color.Blue;
             }
+            if (LectorSintactico.Istrueoflasee(s))
+            {
+                Color = Color.Orange;
+            }
+            if (LectorSintactico.Iscadena(s))
+            {
+                Color = Color.Gray;
+            }
+            if (LectorSintactico.IsEntero(s))
+            {
+                Color = Color.Purple;
+            }
+            if (LectorSintactico.IsCaracter(s))
+            {
+                Color = Color.Brown;
+            }
+            if (LectorSintactico.IsDecimal(s))
+            {
+                Color = Color.Cyan;
+            }
             return Color;
         }
 
